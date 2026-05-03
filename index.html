@@ -1,6 +1,248 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>RantBoyfriend PK - Long Stories | Dil Ki Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lambi mohabbat ki kahaniyan, rishtey ke raaz, aur zindagi ke sabaq. 100% Anonymous">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff5f9; color: #333; line-height: 1.7;
+    }
+    
+    /* ROMANTIC AD POPUP */
+    .ad-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      animation: fadeIn 1s;
+    }
+    .ad-box-romantic {
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      width: 90%; max-width: 400px; padding: 30px;
+      border-radius: 25px; text-align: center;
+      box-shadow: 0 10px 40px rgba(214, 51, 132, 0.5);
+      animation: slideUp 0.8s;
+    }
+    .ad-box-romantic h2 { color: #a61e4d; font-size: 28px; margin-bottom: 15px; }
+    .ad-box-romantic p { color: #333; font-size: 17px; margin-bottom: 20px; }
+    .ad-box-romantic img { width: 100%; border-radius: 15px; margin: 15px 0; }
+    .close-ad {
+      background: #a61e4d; color: white; border: none;
+      padding: 12px 30px; border-radius: 30px; font-weight: bold;
+      cursor: pointer; font-size: 16px;
+    }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes slideUp { from {transform: translateY(50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
+    
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #d63384, #a61e4d);
+      color: white; padding: 30px 15px; text-align: center;
+    }
+    .header h1 { font-size: 36px; margin-bottom: 8px; }
+    .nav {
+      background: white; padding: 14px; text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100;
+    }
+    .nav a {
+      color: #d63384; text-decoration: none; margin: 0 12px;
+      font-weight: 600; font-size: 15px;
+    }
+    .container { max-width: 800px; margin: 25px auto; padding: 0 15px; }
+    
+    /* CARDS */
+    .card {
+      background: white; padding: 30px; border-radius: 20px;
+      margin-bottom: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .card h2 { color: #d63384; font-size: 28px; margin-bottom: 15px; }
+    .card h3 { color: #a61e4d; margin: 25px 0 15px 0; font-size: 22px; }
+    .card p { font-size: 17px; color: #444; margin-bottom: 18px; }
+    .card img { width: 100%; border-radius: 15px; margin: 20px 0; }
+    
+    /* CATEGORY TAGS */
+    .category { 
+      background: #ffe6f2; color: #a61e4d; padding: 8px 20px; 
+      border-radius: 25px; font-size: 14px; display: inline-block; 
+      margin-bottom: 15px; font-weight: 600;
+    }
+    .read-time { color: #888; font-size: 14px; margin-left: 10px; }
+    
+    /* BUTTONS */
+    .btn {
+      background: linear-gradient(135deg, #d63384, #a61e4d);
+      color: white; padding: 15px 38px; border-radius: 35px;
+      text-decoration: none; display: inline-block; margin: 12px 6px;
+      font-weight: bold; box-shadow: 0 5px 15px rgba(214, 51, 132, 0.4);
+    }
+    
+    /* LONG POST STYLE */
+    .long-post { border-right: 5px solid #ffe6f2; padding-right: 20px; }
+    .divider { height: 2px; background: #ffe6f2; margin: 30px 0; }
+    
+    .footer {
+      background: #2d2d2d; color: #bbb; text-align: center;
+      padding: 30px 15px; margin-top: 40px; font-size: 14px;
+    }
+    .date { color: #888; font-size: 14px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <!-- ROMANTIC AD -->
+  <div class="ad-overlay" id="romanticAd">
+    <div class="ad-box-romantic">
+      <h2>💕 Welcome To Diary 💕</h2>
+      <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&auto=format&fit=crop" alt="Romantic">
+      <p>"Har kahani ka ek raaz hota hai...<br>Aaj kya padhna chahoge?"</p>
+      <button class="close-ad" onclick="closeAd()">Stories Padho 📖</button>
+    </div>
+  </div>
+
+  <div class="header">
+    <h1>RantBoyfriend PK 💕</h1>
+    <p>Long Stories | Deep Feelings | Real Emotions</p>
+  </div>
+
+  <div class="nav">
+    <a href="#home">Home</a>
+    <a href="#love">Mohabbat</a>
+    <a href="#dard">Dard</a>
+    <a href="#sabaq">Sabaq</a>
+    <a href="#contact">Rabta</a>
+  </div>
+
+  <div class="container" id="home">
+    
+    <div class="card">
+      <span class="category">🌍 100% Anonymous</span>
+      <h2>Khush Amdeed Is Diary Me 🌸</h2>
+      <p>
+        Yahan choti posts nahi, <b>lambi kahaniyan</b> milengi. Jo dil ko chhoo jayen.
+        Har story 5-10 minute ki reading hai. Chai banao, aaram se baitho, aur padho.
+      </p>
+      <p>
+        <b>Warning:</b> Ye stories padh ke aankh nam ho sakti hai. Tissue saath rakhna ❤️
+      </p>
+    </div>
+
+    <!-- LONG POST 1 -->
+    <div class="card long-post" id="love">
+      <div class="date">📅 3 May 2026</div>
+      <span class="category">MOHABBAT</span><span class="read-time">⏱️ 8 Min Read</span>
+      <h2>📖 "Us Ne Block Kyun Kiya?" - Complete Story</h2>
+      <h3>Part 1: Shuruat</h3>
+      <p>
+        Roz raat 2 bajay tak baat hoti thi. "Good night" ke baad bhi 1 ghanta aur. 
+        Wo kehta tha "Tum meri chai ho. Subha tumhare message ke baghair din shuru nahi hota".
+        Main pagal thi us ke liye. University, ghar, dost - sab bhool gayi thi.
+      </p>
+      <h3>Part 2: Badlao</h3>
+      <p>
+        Phir achanak replies late ane lagay. "Busy hun" ka label lag gaya har baat pe. 
+        Online hota tha, lekin mera message seen karke chor deta. Ek din poocha "Kya baat hai?" 
+        Kehta "Kuch nahi, bas kaam zyada hai". Lekin status pe quotes: "Move on".
+      </p>
+      <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&auto=format&fit=crop" alt="Sad Girl">
+      <h3>Part 3: Block</h3>
+      <p>
+        Ek subha utha to WhatsApp pe sirf ek tick. DP ghayab. Number save tha lekin naam nahi aa raha tha. 
+        <b>Block.</b> Bina waja, bina laraai, bina alvida. 2 saal ki mohabbat ek click me khatam.
+        3 din tak khana nahi khaya. Ammi poochti thi "Beti kya hua?" Main kehti "Sir dard hai".
+      </p>
+      <h3>Part 4: Sabaq</h3>
+      <p>
+        6 mahine baad pata chala us ki mangni ho gayi thi. Ghar walon ne kahi aur rishta kar diya tha. 
+        Wo darr gaya tha. Mujhe batane ki himmat nahi thi, is liye block kar ke bhaag gaya.
+        <b>Sabaq:</b> Jo chhor ke jaye, us ke liye kabhi apna aap mat maro. Jo sach me pyaar karta hai, 
+        wo darr ke bhaagta nahi, larta hai. Tumhari value block button se zyada hai 💕
+      </p>
+      <div class="divider"></div>
+      <p><b>Kya tumhare saath bhi aisa hua? WhatsApp pe batao. Naam nahi poochun gi.</b></p>
+    </div>
+
+    <!-- LONG POST 2 -->
+    <div class="card long-post" id="dard">
+      <div class="date">📅 1 May 2026</div>
+      <span class="category">DARD</span><span class="read-time">⏱️ 6 Min Read</span>
+      <h2>📖 "Chai Wale Baba Ki Adhoori Mohabbat"</h2>
+      <h3>Baba Ka Thela</h3>
+      <p>
+        University ke bahar 70 saal ka baba chai bechta hai. Roz 5 bajay us ka thela lagta hai. 
+        Lekin roz shaam 7 bajay wo ek extra cup chai banata hai. Doodh patti wali, adrak daal ke. 
+        Phir 10 minute wait karta hai. Koi nahi aata. Phir wo chai khud pee leta hai aur thela band.
+      </p>
+      <h3>40 Saal Purana Raaz</h3>
+      <p>
+        Ek din himmat karke poocha "Baba ye extra chai kiske liye?" Baba hans pada. Bola "Beti, 
+        1985 me yahan ek larki parhti thi. Roz shaam ko meri chai peene aati thi. Kehti thi 
+        'Baba aapki chai me mohabbat hai'. Hum dost ban gaye. Phir pyaar ho gaya".
+      </p>
+      <h3>Bicharna</h3>
+      <p>
+        "Us ke abu ko pata chal gaya. Zabardasti shaadi karwa di Lahore me. Jaate hue boli thi 
+        'Baba intezaar karna, main laut ke aaoongi'. 40 saal ho gaye beti. Wo nahi lauti. 
+        Lekin main roz us ke liye chai banata hun. Kya pata kab aa jaye. Mohabbat umeed ka naam hai".
+      </p>
+      <p>
+        Us din samjha mohabbat kya hoti hai. <b>40 saal ka intezaar.</b> Bina shikayat, bina umeed chhore. 
+        Hum 2 din me move on kar lete hain. Baba 40 saal se usi bench pe baitha hai.
+      </p>
+    </div>
+
+    <!-- LONG POST 3 -->
+    <div class="card long-post" id="sabaq">
+      <div class="date">📅 28 April 2026</div>
+      <span class="category">SABAQ</span><span class="read-time">⏱️ 10 Min Read</span>
+      <h2>📖 "Long Distance Ke 7 Rules" - Complete Guide</h2>
+      <h3>Rule 1: Trust = Oxygen</h3>
+      <p>
+        Wo Dubai me, main yahan. 3 saal ho gaye. Pehle saal roz laraai. "Kahan ho? Kis ke saath ho?" 
+        Phir samjha - agar trust nahi to rishta zeher hai. Ab hum ek dosre ka phone nahi check karte. 
+        Kyunki jo sach me tumhara hai, wo 7000 km door bhi tumhara rahega.
+      </p>
+      <h3>Rule 2: Video Call = Mulaqat</h3>
+      <p>
+        Text me emotions nahi aate. "K" ka matlab "Theek hun" bhi ho sakta hai aur "Gussa hun" bhi. 
+        Roz 20 min video call zaruri. Chehra dekhna zaruri hai. Aankh sab sach bol deti hai.
+      </p>
+      <h3>Rule 3: Future Ki Baat</h3>
+      <p>
+        "Shaadi kab karni hai?" ye sawal se mat bhago. Date fix karo. "2 saal baad" bol ke chhor do. 
+        Goal ke baghair long distance rishta marathon hai jiska finish line nahi.
+      </p>
+      <p><b>Baaki 4 rules agle hafte...</b> Tab tak ye 3 follow karo. Rishta bach jayega ❤️</p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>📞 Gumnaam Rabta</h2>
+      <p>Tumhari story kya hai? Kitni lambi hai? Yahan likhne ki koi limit nahi.</p>
+      <p>Roz raat messages parhti hun. Bilkul private aur safe 🌙</p>
+      <a href="https://wa.me/92XXXXXXXXXX" class="btn">WhatsApp Pe Lambi Baat Karo</a>
+      <p style="margin-top:18px; font-size:15px; color:#d63384; font-weight:600;">
+        "Tumhari kahani, tumhare lafz. Main sirf sunun gi 💕"
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2026 RantBoyfriend PK | Long Stories, Deep Feelings ❤️</p>
+    <p style="margin-top:10px; font-size:12px;">100% Anonymous | No Name, No City, No Email 🔒</p>
+  </div>
+
+  <script>
+    setTimeout(function() { closeAd(); }, 3000);
+    function closeAd() {
+      document.getElementById('romanticAd').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
   <title>RantBoyfriend PK - Mahnoor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
