@@ -525,3 +525,41 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RantBoyfriend Live - Worldwide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: white; }
+  .signup-overlay { 
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                  url('https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200') center/cover;
+      display: flex; align-items: center; justify-content: center; z-index: 9999;
+    }
+  .signup-box { 
+      background: rgba(26,26,26,0.95); padding: 40px 30px; border-radius: 25px; 
+      max-width: 400px; width: 90%; text-align: center; border: 2px solid #FF1493;
+    }
+  .signup-box h1 { color: #FF1493; margin-bottom: 10px; font-size: 28px; }
+    input { width: 100%; padding: 14px; margin: 10px 0; border-radius: 12px; border: 1px solid #444; background: #2a2a2a; color: white; }
+  .btn-signup { background: linear-gradient(45deg, #FF1493, #FF6B6B); color: white; padding: 16px; border-radius: 30px; border: none; cursor: pointer; font-weight: bold; margin: 15px 0; width: 100%; font-size: 16px; }
+  .main-site { display: none; background: #0a0a0a; min-height: 100vh; }
+  .main-site.active { display: block; }
+  .header { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200') center/cover; padding: 60px 20px; text-align: center; }
+  .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+  .card { background: #1a1a1a; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #333; }
+  .btn { background: #FF1493; color: white; padding: 16px 30px; border-radius: 30px; text-decoration: none; display: inline-block; border: none; cursor: pointer; font-weight: bold; margin: 8px 5px; }
+  .btn-live { background: #FF0000; animation: blink 1s infinite; }
+  .btn-whatsapp { background: #25D366; }
+  @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+  .tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+  .tab { padding: 14px 5px; background: #333; border: none; border-radius: 15px; font-weight: bold; cursor: pointer; color: white; }
+  .tab.active { background: #FF1493; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  iframe { width: 100%; height: 500px; border: 0; border-radius: 15px; margin: 15px 0; }
+  .warning { background: #2a2a2a; border-left: 4px solid #FF1493; padding: 15px; border-radius: 10px; margin: 15px 0; }
+  </style
