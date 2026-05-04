@@ -581,3 +581,97 @@
   <a href="https://wa.me/92XXXXXXXXXX" class="btn" style="background:#25D366">WhatsApp Pe Likho</a>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RantBoyfriend Live</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .container { max-width: 400px; margin: 0 auto; }
+    h1 { color: #ff4d94; margin-bottom: 10px; }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .live-btn { background: #ff4d94; color: white; }
+    .whatsapp-btn { background: #25D366; color: white; }
+    .login-btn { background: #4285f4; color: white; }
+    .hidden { display: none; }
+    #user { background: #1a1a1a; padding: 15px; border-radius: 12px; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔴 RantBoyfriend Live</h1>
+    <p>Mahnoor ke saath live baat karo</p>
+
+    <!-- LOGIN BUTTON -->
+    <div id="login-box">
+      <button class="btn login-btn" onclick="netlifyIdentity.open()">
+        Login with Google / Facebook
+      </button>
+      <p style="font-size:14px; color:#888;">Live dekhne ke liye login karo</p>
+    </div>
+
+    <!-- LOGGED IN USER -->
+    <div id="user" class="hidden">
+      <h3>Welcome <span id="username"></span>! ✅</h3>
+      <button class="btn" onclick="netlifyIdentity.logout()" style="background:#333;">Logout</button>
+    </div>
+
+    <!-- LIVE BUTTON - LOGIN KE BAAD DIKHEGA -->
+    <div id="live-section" class="hidden">
+      <a href="https://vdo.ninja/?room=MahnoorLive&push" class="btn live-btn">
+        🎥 START LIVE VIDEO
+      </a>
+      <a href="https://wa.me/92XXXXXXXXXX?text=Live%20dekhna%20hai" class="btn whatsapp-btn">
+        💬 WhatsApp Pe Likho
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    // Login check karna
+    netlifyIdentity.on('init', user => {
+      if (user) showUser(user);
+    });
+
+    netlifyIdentity.on('login', user => {
+      showUser(user);
+      netlifyIdentity.close();
+    });
+
+    netlifyIdentity.on('logout', () => {
+      document.getElementById('login-box').classList.remove('hidden');
+      document.getElementById('user').classList.add('hidden');
+      document.getElementById('live-section').classList.add('hidden');
+    });
+
+    function showUser(user) {
+      document.getElementById('username').innerText = user.user_metadata.full_name || user.email;
+      document.getElementById('login-box').classList.add('hidden');
+      document.getElementById('user').classList.remove('hidden');
+      document.getElementById('live-section').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
