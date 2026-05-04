@@ -675,3 +675,109 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RantBoyfriend Live</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .container { max-width: 400px; margin: 0 auto; }
+    h1 { color: #ff4d94; margin-bottom: 10px; }
+    .live-status {
+      padding: 15px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .live-on { background: #ff0000; animation: blink 1s infinite; }
+    .live-off { background: #333; }
+    @keyframes blink { 50% { opacity: 0.5; } }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 18px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .whatsapp-btn { background: #25D366; color: white; }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      border: 2px solid #ff4d94;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔴 RantBoyfriend Live</h1>
+    
+    <!-- AUTO LIVE STATUS -->
+    <div id="status" class="live-status live-off">
+      ⚫ OFFLINE - Mahnoor abhi live nahi hai
+    </div>
+
+    <!-- AUTO LIVE VIDEO - KHULTE HI START -->
+    <iframe 
+      id="liveFrame"
+      src="https://vdo.ninja/?view=MahnoorLive&autoplay&muted" 
+      allow="camera;microphone;autoplay" 
+      style="display:none;">
+    </iframe>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/92XXXXXXXXXX?text=Live%20dekhna%20hai" class="btn whatsapp-btn">
+      💬 WhatsApp Pe Likho
+    </a>
+
+    <p style="font-size:14px; color:#888; margin-top:30px;">
+      Jab Mahnoor live aayegi, video apne aap chal jayegi
+    </p>
+  </div>
+
+  <script>
+    // VDO.Ninja check karega ke room me koi hai ya nahi
+    const frame = document.getElementById('liveFrame');
+    const status = document.getElementById('status');
+    
+    // Har 3 second me check karo ke live hai ya nahi
+    setInterval(() => {
+      fetch('https://api.vdo.ninja/stats/MahnoorLive')
+        .then(res => res.json())
+        .then(data => {
+          if(data.viewers > 0 || data.publishers > 0) {
+            // LIVE HAI
+            status.className = 'live-status live-on';
+            status.innerHTML = '🔴 LIVE NOW - Mahnoor Online Hai!';
+            frame.style.display = 'block';
+          } else {
+            // OFFLINE HAI
+            status.className = 'live-status live-off';
+            status.innerHTML = '⚫ OFFLINE - Mahnoor abhi live nahi hai';
+            frame.style.display = 'none';
+          }
+        })
+        .catch(() => {
+          // Agar API fail ho jaye to normal dikhao
+          frame.style.display = 'block';
+        });
+    }, 3000);
+  </script>
+</body>
+</html>
