@@ -1,4 +1,138 @@
-up<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RantBoyfriend.PK - Client & Owner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff5f9; }
+    .hide { display: none !important; }
+    .show { display: block !important; }
+    .center { display: flex !important; }
+    
+    #loginBox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95); z-index: 10000;
+      align-items: center; justify-content: center;
+    }
+    .popup {
+      background: white; width: 90%; max-width: 400px; padding: 30px;
+      border-radius: 25px; text-align: center;
+    }
+    .popup h2 { color: #d63384; font-size: 26px; margin-bottom: 15px; }
+    .btn-role {
+      width: 100%; padding: 16px; margin: 10px 0; border: none; border-radius: 15px;
+      font-size: 17px; font-weight: bold; cursor: pointer;
+    }
+    .btn-client { background: linear-gradient(135deg, #ff9a9e, #fecfef); color: #a61e4d; }
+    .btn-owner { background: linear-gradient(135deg, #d63384, #a61e4d); color: white; }
+    
+    #adBox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); z-index: 9999;
+      align-items: center; justify-content: center;
+    }
+    .ad-content {
+      background: linear-gradient(135deg, #ff9a9e, #fecfef);
+      width: 90%; max-width: 400px; padding: 25px;
+      border-radius: 25px; text-align: center;
+    }
+    .ad-content img { width: 100%; border-radius: 15px; margin: 15px 0; }
+    .btn-ad { background: #a61e4d; color: white; border: none; padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer; }
+    
+    #website { display: none; }
+    .header { background: linear-gradient(135deg, #d63384, #a61e4d); color: white; padding: 20px; text-align: center; }
+    .userbar { background: #a61e4d; color: white; padding: 10px; text-align: center; }
+    .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+    .card { background: white; padding: 25px; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .card h2 { color: #d63384; margin-bottom: 15px; }
+    .btn { background: linear-gradient(135deg, #d63384, #a61e4d); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; display: inline-block; border: none; cursor: pointer; font-weight: bold; }
+    .btn-logout { background: #666; font-size: 13px; padding: 6px 15px; }
+    .owner-area { background: #fff0f6; border: 2px dashed #d63384; }
+  </style>
+</head>
+<body>
+
+  <div id="loginBox" class="center">
+    <div class="popup">
+      <h2>💕 RantBoyfriend.PK 💕</h2>
+      <p>Select your role to continue:</p>
+      <button class="btn-role btn-client" onclick="doLogin('client')">👤 CLIENT LOGIN<br><small>Read anonymous stories</small></button>
+      <button class="btn-role btn-owner" onclick="doLogin('owner')">👑 OWNER LOGIN<br><small>Manage website</small></button>
+    </div>
+  </div>
+
+  <div id="adBox" class="hide">
+    <div class="ad-content">
+      <h2>💕 Welcome To Diary 💕</h2>
+      <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400" alt="Romantic">
+      <p>"Every story has a secret...<br>What do you want to read today?"</p>
+      <button class="btn-ad" onclick="openSite()">Read Stories 📖</button>
+    </div>
+  </div>
+
+  <div id="website">
+    <div class="userbar">
+      Logged in as: <span id="roleName"></span> 
+      <button class="btn btn-logout" onclick="doLogout()">Logout</button>
+    </div>
+    <div class="header">
+      <h1>RantBoyfriend.PK 💕</h1>
+      <p>Long Stories | Deep Feelings</p>
+    </div>
+    <div class="container">
+      <div class="card" id="clientDiv">
+        <h2>Welcome To The Diary 🌸</h2>
+        <p>You won't find short posts here. You'll find <b>long stories</b> that touch your heart.</p>
+      </div>
+      <div class="card">
+        <h2>📖 "Why Did He Block Me?"</h2>
+        <p>We used to talk until 2 AM every night. Then suddenly blocked. 2 years ended with one click.</p>
+        <p><b>Lesson:</b> Never destroy yourself for someone who leaves 💕</p>
+      </div>
+      <div class="card owner-area hide" id="ownerDiv">
+        <h2>👑 OWNER PANEL</h2>
+        <p><b>Welcome Owner!</b> Total Visitors: 1,247</p>
+        <a href="https://github.com/ta378944-gif/rantboyfriend-pk" class="btn">Go to GitHub</a>
+      </div>
+      <div class="card">
+        <h2>📞 Anonymous Contact</h2>
+        <a href="https://wa.me/92XXXXXXXXXX" class="btn">WhatsApp Me</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var userType = "";
+    
+    function doLogin(type) {
+      userType = type;
+      document.getElementById("loginBox").className = "hide";
+      document.getElementById("adBox").className = "center";
+    }
+    
+    function openSite() {
+      document.getElementById("adBox").className = "hide";
+      document.getElementById("website").className = "show";
+      
+      if(userType == "owner") {
+        document.getElementById("roleName").innerHTML = "OWNER 👑";
+        document.getElementById("ownerDiv").className = "card owner-area show";
+        document.getElementById("clientDiv").className = "hide";
+      } else {
+        document.getElementById("roleName").innerHTML = "CLIENT 👤";
+        document.getElementById("ownerDiv").className = "hide";
+      }
+    }
+    
+    function doLogout() {
+      document.getElementById("website").className = "hide";
+      document.getElementById("loginBox").className = "center";
+    }
+  </script>
+
+</body>
+</html>up<!DOCTYPE html>
 <html>
 <head>
   <title>RantBoyfriend PK - Long Stories | Dil Ki Diary</title>
