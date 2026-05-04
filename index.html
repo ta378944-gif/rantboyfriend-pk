@@ -290,3 +290,238 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RantBoyfriend.PK - Worldwide Live</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: white; }
+    
+    /* SIGNUP SCREEN - PEHLE YE DIKHEGA */
+  .signup-overlay { 
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                  url('https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200') center/cover;
+      display: flex; align-items: center; justify-content: center; z-index: 9999;
+    }
+  .signup-box { 
+      background: rgba(26,26,26,0.95); padding: 40px 30px; border-radius: 25px; 
+      max-width: 400px; width: 90%; text-align: center; border: 2px solid #FF1493;
+      backdrop-filter: blur(10px);
+    }
+  .signup-box h1 { color: #FF1493; margin-bottom: 10px; font-size: 28px; }
+  .signup-box p { color: #ccc; margin-bottom: 25px; }
+    input { 
+      width: 100%; padding: 14px; margin: 10px 0; border-radius: 12px; 
+      border: 1px solid #444; background: #2a2a2a; color: white; font-size: 15px;
+    }
+  .btn-signup { 
+      background: linear-gradient(45deg, #FF1493, #FF6B6B); color: white; 
+      padding: 16px; border-radius: 30px; border: none; cursor: pointer; 
+      font-weight: bold; margin: 15px 0; width: 100%; font-size: 16px;
+    }
+  .profile-pics { display: flex; justify-content: center; gap: 10px; margin: 20px 0; }
+  .profile-pics img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid #FF1493; }
+    
+    /* MAIN WEBSITE - SIGNUP KE BAAD DIKHEGI */
+  .main-site { display: none; background: #0a0a0a; min-height: 100vh; }
+  .main-site.active { display: block; }
+   
+.header { 
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                  url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200') center/cover;
+      padding: 60px 20px; text-align: center;
+    }
+.container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+.card { background: #1a1a1a; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #333; }
+.card h2 { color: #FF1493; margin-bottom: 15px; }
+.btn { background: #FF1493; color: white; padding: 16px 30px; border-radius: 30px; text-decoration: none; display: inline-block; border: none; cursor: pointer; font-weight: bold; margin: 8px 5px; text-align: center; font-size: 15px; }
+.btn-live { background: #FF0000; animation: blink 1s infinite; }
+.btn-whatsapp { background: #25D366; }
+.btn-date { background: #FF6B6B; }
+.btn-group { background: #9C27B0; }
+  @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+.tab { padding: 14px 5px; background: #333; border: none; border-radius: 15px; font-weight: bold; cursor: pointer; color: white; font-size: 12px; }
+.tab.active { background: #FF1493; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.online { color: #00FF00; font-weight: bold; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+  @media (max-width: 700px) {.tabs { grid-template-columns: repeat(2, 1fr); }.grid-2 { grid-template-columns: 1fr; } }
+  iframe { width: 100%; height: 500px; border: 0; border-radius: 15px; margin: 15px 0; }
+.warning { background: #2a2a2a; border-left: 4px solid #FF1493; padding: 15px; border-radius: 10px; margin: 15px 0; }
+.user-info { position: fixed; top: 15px; right: 15px; background: #FF1493; padding: 8px 15px; border-radius: 20px; font-size: 13px; z-index: 100; }
+  </style>
+</head>
+<body>
+
+  <!-- SIGNUP SCREEN - PEHLE YE AYEGA -->
+  <div class="signup-overlay" id="signupScreen">
+    <div class="signup-box">
+      <h1>RantBoyfriend.PK 🌍</h1>
+      <p>Worldwide Live Video + Dating</p>
+      
+      <div class="profile-pics">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="user">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="user">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="user">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100" alt="user">
+      </div>
+      
+      <p style="color:#00FF00; font-size:14px;">● 3,847 People Online Now</p>
+      
+      <input type="text" id="signupName" placeholder="Your Name / Nickname" required>
+      <input type="email" id="signupEmail" placeholder="Email Address" required>
+      <input type="password" id="signupPass" placeholder="Create Password" required>
+      <select id="signupCountry" style="width:100%; padding:14px; margin:10px 0; border-radius:12px; border:1px solid #444; background:#2a2a2a; color:white;">
+        <option value="">Select Your Country</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="UAE">UAE</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+        <option value="Other">Other</option>
+      </select>
+      
+      <button class="btn-signup" onclick="doSignup()">🚀 SIGNUP & ENTER SITE</button>
+      
+      <p style="font-size:12px; color:#888; margin-top:15px;">
+        100% Free. No payment. Sirf marzi se baat karo ❤️
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN WEBSITE - SIGNUP KE BAAD -->
+  <div class="main-site" id="mainSite">
+    <div class="user-info" id="userInfo"></div>
+    
+    <div class="header">
+      <h1 style="font-size:36px; text-shadow:2px 2px 4px #000;">RantBoyfriend.PK 🌍 LIVE</h1>
+      <p style="font-size:18px; text-shadow:1px 1px 2px #000;">Omegle + Dating + Chat | <span class="online">● 3,847 Online Worldwide</span></p>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <div class="tabs">
+          <button class="tab active" onclick="openTab('live1to1')">🔴 1-TO-1 LIVE</button>
+          <button class="tab" onclick="openTab('group')">👥 GROUP</button>
+          <button class="tab" onclick="openTab('date')">❤️ DATING</button>
+          <button class="tab" onclick="openTab('chat')">💬 CHAT</button>
+        </div>
+
+        <!-- TAB 1: LIVE 1-TO-1 -->
+        <div id="live1to1" class="tab-content active">
+          <h2>🔴 Live 1-to-1 Video - All World</h2>
+          <p><b>Omegle jaisa. USA, UK, Dubai, Pakistan - Kahi se bhi log!</b></p>
+          <a href="https://vdo.ninja/?room=RantBoyfriendWorld&clean&autostart" class="btn btn-live" target="_blank">🔴 START RANDOM VIDEO CALL</a>
+          <iframe src="https://vdo.ninja/?room=RantBoyfriendWorld&clean&autostart" allow="camera; microphone; fullscreen"></iframe>
+        </div>
+
+        <!-- TAB 2: GROUP -->
+        <div id="group" class="tab-content">
+          <h2>👥 Group Video Room - 100 Log</h2>
+          <iframe src="https://meet.jit.si/RantBoyfriendWorldGroup" allow="camera; microphone; fullscreen"></iframe>
+          <a href="https://meet.jit.si/RantBoyfriendWorldGroup" class="btn btn-group" target="_blank">JOIN GROUP CALL</a>
+        </div>
+
+        <!-- TAB 3: DATING -->
+        <div id="date" class="tab-content">
+          <h2>❤️ Worldwide Dating</h2>
+          <div class="grid-2">
+            <input type="number" id="age" placeholder="Your Age 18+">
+            <select id="gender">
+              <option value="">Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <textarea id="bio" rows="2" placeholder="About you - Hobbies..."></textarea>
+          <a href="#" class="btn btn-date" onclick="sendProfile()">❤️ FIND MATCH</a>
+        </div>
+
+        <!-- TAB 4: CHAT - MARZI WALA -->
+        <div id="chat" class="tab-content">
+          <h2>💬 WhatsApp Chat - Sirf Marzi Se</h2>
+          <div class="warning">
+            <b>⚠️ ZAROORI:</b> Ye sirf un ke liye hai <b>jo apni marzi se baat karna chahte hain</b>. Koi zabardasti nahi. Dil kare to message karo, warna rehne do ❤️
+          </div>
+          <a href="https://wa.me/92XXXXXXXXXX?text=Salam,%20baat%20karni%20hai" class="btn btn-whatsapp">WhatsApp Pe Likho 📝</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // SIGNUP SYSTEM
+    function doSignup() {
+      var name = document.getElementById("signupName").value;
+      var email = document.getElementById("signupEmail").value;
+      var pass = document.getElementById("signupPass").value;
+      var country = document.getElementById("signupCountry").value;
+
+      if(!name ||!email ||!pass ||!country) {
+        alert("Sab fields bharo please! ❤️");
+        return;
+      }
+      if(pass.length < 4) {
+        alert("Password kam se kam 4 letters ka ho");
+        return;
+      }
+
+      // Save to browser
+      localStorage.setItem("rb_user", JSON.stringify({name: name, email: email, country: country}));
+      
+      // Hide signup, show site
+      document.getElementById("signupScreen").style.display = "none";
+      document.getElementById("mainSite").classList.add("active");
+      document.getElementById("userInfo").innerHTML = "👋 " + name + " | " + country;
+    }
+
+    // Check if already signed up
+    window.onload = function() {
+      var user = localStorage.getItem("rb_user");
+      if(user) {
+        user = JSON.parse(user);
+        document.getElementById("signupScreen").style.display = "none";
+        document.getElementById("mainSite").classList.add("active");
+        document.getElementById("userInfo").innerHTML = "👋 " + user.name + " | " + user.country;
+      }
+    }
+
+    function openTab(tabName) {
+      var i;
+      var x = document.getElementsByClassName("tab-content");
+      for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
+      var tabs = document.getElementsByClassName("tab");
+      for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
+      document.getElementById(tabName).classList.add("active");
+      event.currentTarget.classList.add("active");
+    }
+
+    function sendProfile() {
+      var user = JSON.parse(localStorage.getItem("rb_user"));
+      var age = document.getElementById("age").value;
+      var gender = document.getElementById("gender").value;
+      var bio = document.getElementById("bio").value;
+
+      if(!age ||!gender) {
+        alert("Age aur Gender bharo! ❤️");
+        return;
+      }
+      if(age < 18) {
+        alert("Sorry! 18+ only ❤️");
+        return;
+      }
+
+      var text = `WORLDWIDE MATCH:%0AName: ${user.name}%0AAge: ${age}%0AGender: ${gender}%0ACountry: ${user.country}%0ABio: ${bio}`;
+      window.open(`https://wa.me/92XXXXXXXXXX?text=${text}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
