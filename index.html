@@ -77,3 +77,216 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RantBoyfriend.PK - Worldwide Live</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #0a0a0a; color: white; }
+.header { background: linear-gradient(45deg, #FF1493, #FF6B6B); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+.container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+.card { background: #1a1a1a; padding: 25px; border-radius: 20px; margin-bottom: 25px; border: 1px solid #333; }
+.card h2 { color: #FF1493; margin-bottom: 15px; }
+.card h3 { color: #FF6B6B; margin: 18px 0 10px 0; }
+.btn { background: #FF1493; color: white; padding: 16px 30px; border-radius: 30px; text-decoration: none; display: inline-block; border: none; cursor: pointer; font-weight: bold; margin: 8px 5px; text-align: center; font-size: 15px; }
+.btn-live { background: #FF0000; animation: blink 1s infinite; }
+.btn-whatsapp { background: #25D366; }
+.btn-date { background: #FF6B6B; }
+.btn-group { background: #9C27B0; }
+.btn-voice { background: #FF9800; }
+.btn-story { background: #2196F3; }
+.btn-form { background: #4285F4; }
+  @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+.tab { padding: 14px 5px; background: #333; border: none; border-radius: 15px; font-weight: bold; cursor: pointer; color: white; font-size: 12px; }
+.tab.active { background: #FF1493; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.online { color: #00FF00; font-weight: bold; }
+  input, select, textarea { width: 100%; padding: 12px; margin: 8px 0; border-radius: 10px; border: 1px solid #444; background: #2a2a2a; color: white; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  @media (max-width: 700px) {.tabs { grid-template-columns: repeat(2, 1fr); }.grid-2,.grid-3 { grid-template-columns: 1fr; } }
+  iframe { width: 100%; height: 500px; border: 0; border-radius: 15px; margin: 15px 0; }
+.badge { background: #FF0000; color: white; padding: 3px 8px; border-radius: 10px; font-size: 11px; margin-left: 5px; }
+.warning { background: #2a2a2a; border-left: 4px solid #FF1493; padding: 15px; border-radius: 10px; margin: 15px 0; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>RantBoyfriend.PK 🌍 LIVE</h1>
+    <p>Omegle + Dating + Chat | <span class="online">● 3,847 Online Worldwide</span></p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" onclick="openTab('live1to1')">🔴 1-TO-1 LIVE</button>
+        <button class="tab" onclick="openTab('group')">👥 GROUP CALL</button>
+        <button class="tab" onclick="openTab('date')">❤️ DATING <span class="badge">HOT</span></button>
+        <button class="tab" onclick="openTab('chat')">💬 CHAT</button>
+        <button class="tab" onclick="openTab('voice')">🎤 VOICE</button>
+        <button class="tab" onclick="openTab('form')">📝 FORM</button>
+        <button class="tab" onclick="openTab('story')">📖 STORY</button>
+        <button class="tab" onclick="openTab('games')">🎮 GAMES</button>
+      </div>
+
+      <!-- OPTION 1: LIVE 1-TO-1 - OMEGLE JAISA -->
+      <div id="live1to1" class="tab-content active">
+        <h2>🔴 Live 1-to-1 Video - All World</h2>
+        <p><b>Omegle jaisa. Random log se milo. USA, UK, Dubai, India - Kahi se bhi!</b></p>
+        <a href="https://vdo.ninja/?room=RantBoyfriendWorld&clean&autostart" class="btn btn-live" target="_blank">
+          🔴 START RANDOM VIDEO CALL
+        </a>
+        <iframe 
+          src="https://vdo.ninja/?room=RantBoyfriendWorld&clean&autostart" 
+          allow="camera; microphone; fullscreen">
+        </iframe>
+        <div class="warning">
+          <b>⚠️ Kaise kaam karega:</b> Jab 2 log is button pe click karenge, wo apas me connect ho jayenge. 1-to-1. Next ke liye page refresh karo ya "Hang Up" dabao.
+        </div>
+      </div>
+
+      <!-- OPTION 2: GROUP VIDEO CALL -->
+      <div id="group" class="tab-content">
+        <h2>👥 Group Video Room - 100 Log</h2>
+        <p><b>Worldwide friends ke sath party. 100 log ek sath.</b></p>
+        <iframe src="https://meet.jit.si/RantBoyfriendWorldGroup" allow="camera; microphone; fullscreen"></iframe>
+        <a href="https://meet.jit.si/RantBoyfriendWorldGroup" class="btn btn-group" target="_blank">FULL SCREEN GROUP CALL</a>
+      </div>
+
+      <!-- OPTION 3: DATING APP -->
+      <div id="date" class="tab-content">
+        <h2>❤️ Worldwide Dating / Match Finder</h2>
+        <p><b>USA, UK, Dubai, Pakistan - Kahi se bhi match dhundo</b></p>
+        <div class="grid-2">
+          <input type="text" id="name" placeholder="Name / Nickname">
+          <input type="number" id="age" placeholder="Age 18+">
+        </div>
+        <div class="grid-3">
+          <select id="gender">
+            <option value="">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <select id="country">
+            <option value="">Country</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="UAE">UAE</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="Other">Other</option>
+          </select>
+          <input type="text" id="city" placeholder="City">
+        </div>
+        <textarea id="bio" rows="2" placeholder="About you - Hobbies, Kya pasand hai..."></textarea>
+        <a href="#" class="btn btn-date" onclick="sendProfile()">❤️ FIND WORLDWIDE MATCH</a>
+        <p style="margin-top:15px; font-size:13px; color:#FF6B6B;">Match 24 ghante me WhatsApp pe milega 💕</p>
+      </div>
+
+      <!-- OPTION 4: CHAT - MARZI WALA -->
+      <div id="chat" class="tab-content">
+        <h2>💬 WhatsApp Chat - Sirf Marzi Se</h2>
+        <div class="warning">
+          <b>⚠️ ZAROORI BAAT:</b> Ye button sirf un ke liye hai <b>jo apni marzi se baat karna chahte hain</b>. Koi zabardasti nahi. Agar dil kare to message karo, warna rehne do. Main kisi ko force nahi karti ❤️
+        </div>
+        <h3>Option 1: Text Chat</h3>
+        <a href="https://wa.me/92XXXXXXXXXX?text=Salam,%20baat%20karni%20hai" class="btn btn-whatsapp">WhatsApp Pe Likho 📝</a>
+        
+        <h3>Option 2: Voice Note</h3>
+        <a href="https://wa.me/92XXXXXXXXXX" class="btn btn-whatsapp">Voice Note Bhejo 🎤</a>
+        <p style="margin-top:15px; font-size:14px; color:#aaa;">Reply Time: Roz raat 9-11 PM 🌙</p>
+      </div>
+
+      <!-- OPTION 5: VOICE CHAT -->
+      <div id="voice" class="tab-content">
+        <h2>🎤 Voice Room - Worldwide</h2>
+        <p><b>Video nahi? Sirf awaz se baat karo. Jitsi audio room</b></p>
+        <iframe src="https://meet.jit.si/RantBoyfriendVoice#config.startWithVideoMuted=true" allow="microphone"></iframe>
+        <a href="https://meet.jit.si/RantBoyfriendVoice#config.startWithVideoMuted=true" class="btn btn-voice" target="_blank">JOIN VOICE ROOM</a>
+      </div>
+
+      <!-- OPTION 6: ANONYMOUS FORM -->
+      <div id="form" class="tab-content">
+        <h2>📝 Gumnaam Form - No Name, No Number</h2>
+        <p><b>Bilkul anonymous. Koi nahi janega tum kon ho</b></p>
+        <a href="https://forms.gle/YOUR-GOOGLE-FORM-LINK" class="btn btn-form" target="_blank">Gumnaam Kahani Likho 📝</a>
+        <p style="margin-top:15px; font-size:13px; color:#aaa;">Google Form pe name/email optional rakho</p>
+      </div>
+
+      <!-- OPTION 7: STORIES -->
+      <div id="story" class="tab-content">
+        <h2>📖 Long Emotional Stories</h2>
+        <div style="background:#2a2a2a; padding:20px; border-radius:15px; margin:15px 0;">
+          <h3 style="color:#FF1493;">"Why Did He Block Me?"</h3>
+          <p>We used to talk until 2 AM every night. He said "You're my tea. My day doesn't start without your message." Then suddenly blocked. No reason, no fight. 2 years ended with one click.</p>
+          <p><b>Lesson:</b> Never destroy yourself for someone who leaves 💕</p>
+        </div>
+        <a href="https://wa.me/92XXXXXXXXXX?text=Meri%20story%20share%20karni%20hai" class="btn btn-story">Apni Story Bhejo 📖</a>
+      </div>
+
+      <!-- OPTION 8: GAMES -->
+      <div id="games" class="tab-content">
+        <h2>🎮 Ice Breaker Games - Video Call Me Khelo</h2>
+        <h3>1. Truth or Dare</h3>
+        <p>Video call me ek dusre se sawal poocho</p>
+        <h3>2. Never Have I Ever</h3>
+        <p>"Maine kabhi..." wala game</p>
+        <h3>3. 20 Questions</h3>
+        <p>20 sawal me pata lagao samne wala kya soch raha hai</p>
+        <a href="https://vdo.ninja/?room=RantBoyfriendGame&clean&autostart" class="btn btn-live" target="_blank">GAME ROOM JOIN KARO 🎮</a>
+      </div>
+
+    </div>
+
+    <div class="card">
+      <h2>🌍 Worldwide Kaise Kaam Karega?</h2>
+      <p><b>1. VDO.Ninja:</b> Peer-to-Peer tech. USA ka banda Dubai wale se direct connect hota hai. Koi beech ka server nahi. Is liye fast hai</p>
+      <p><b>2. Jitsi:</b> Germany + USA servers. Poori duniya me 200ms ping</p>
+      <p><b>3. WhatsApp:</b> Sab countries me chalta hai</p>
+      <p style="color:#00FF00; margin-top:15px;"><b>Result:</b> India, Pakistan, USA, UK, Canada, Australia - Sab jagah se log aa sakte hain ✅</p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      var i;
+      var x = document.getElementsByClassName("tab-content");
+      for (i = 0; i < x.length; i++) { x[i].classList.remove("active"); }
+      var tabs = document.getElementsByClassName("tab");
+      for (i = 0; i < tabs.length; i++) { tabs[i].classList.remove("active"); }
+      document.getElementById(tabName).classList.add("active");
+      event.currentTarget.classList.add("active");
+    }
+
+    function sendProfile() {
+      var name = document.getElementById("name").value;
+      var age = document.getElementById("age").value;
+      var gender = document.getElementById("gender").value;
+      var country = document.getElementById("country").value;
+      var city = document.getElementById("city").value;
+      var bio = document.getElementById("bio").value;
+
+      if(!name ||!age ||!gender ||!country ||!city) {
+        alert("Sab fields bharo! Name, Age, Gender, Country, City ❤️");
+        return;
+      }
+      if(age < 18) {
+        alert("Sorry! 18+ only ❤️");
+        return;
+      }
+
+      var text = `WORLDWIDE DATING PROFILE:%0AName: ${name}%0AAge: ${age}%0AGender: ${gender}%0ACountry: ${country}%0ACity: ${city}%0ABio: ${bio}%0A%0AMujhe worldwide match chahiye`;
+      window.open(`https://wa.me/92XXXXXXXXXX?text=${text}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
